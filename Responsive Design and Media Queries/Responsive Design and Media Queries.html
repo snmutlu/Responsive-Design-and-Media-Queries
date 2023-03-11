@@ -45,20 +45,23 @@
             margin: 0 auto; /*Div'imizi sayfaya yatayda ortaladığımız bölüm*/
             display: flex;
             flex-wrap: wrap; /*Flex wrap sayesinde contentlerimiz div alanına sığmadığı zaman alt satırdan konumlanmaya devam ediyor*/
+            margin-top: 100px;
         }
         .box{
             border: 1px solid black;
             background: #a7a7a7;
             padding: 10px;
-            width: 25%;
+            width: 25%; /*Responsive tasarımlarda width'lerimizi px yerine % ile vermemiz gerekiyor çünkü kapsayıcımızın genişliği
+            değiştikçe content'imizin genişliği de yüzdesel oranda değişecektir*/
         }
-        /*Buradan Devam*/
+        /*Burada sayfamız 768px e geldiği zaman box divimiz sayfanın %50 sini kapsasın yani 2 tanesi görünsün demiş oluyoruz */
         @media (max-width: 768px) {
             .box{
                 width: 50%;
             }
         }
-        
+        /*Burada ise sayfamız 500px e geldiği zaman box divimiz sayfanın %100'ünü kapsasın yani 1 tanesi görüntülensin demiş oluyoruz
+        bu sayede box divlerimiz sayfa boyutu 500px e düştüğü zaman alt alta 4 tane görünecek şekilde sıralanacak*/
         @media (max-width:500px) {
             .box{
                 width: 100%;
