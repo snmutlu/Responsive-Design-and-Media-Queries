@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design and Media Queries</title>
+    <style>
+        body {
+            background: red; /*Body'mizin normalde göründüğü arka plan rengi bu şekilde*/
+        }
+
+        /*Bu bölümde web sayfamızın 768 pixel'e düştüğü zaman görüntüleneceği arka plan rengini belirlemiş olduk @media query'si sayesinde*/
+        @media(max-width: 768px) {
+            body {
+                background: blue;
+            }
+        }
+        /*Bu bölümde web sayfamızın 500 pixel'e düştüğü zaman görüntüleneceği arka plan rengini belirlemiş olduk @media query'si sayesinde*/
+        @media (max-width: 500px) {
+            body {
+                background: green;
+            }
+        }
+        
+        p{
+            /*Burada p etiketimiz 768 pixel'e kadar görünür durumda 768 px aşağısında display:none aktifleşiyor @media query'si
+            içerisinde verdiğimiz min-width özelliği sayesinde*/
+            display: none; 
+        }
+        @media (min-width: 768px) {
+            p{
+                display: block;
+            }
+        } 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto; /*Div'imizi sayfaya yatayda ortaladığımız bölüm*/
+            display: flex;
+            flex-wrap: wrap; /*Flex wrap sayesinde contentlerimiz div alanına sığmadığı zaman alt satırdan konumlanmaya devam ediyor*/
+        }
+        .box{
+            border: 1px solid black;
+            background: #a7a7a7;
+            padding: 10px;
+            width: 25%;
+        }
+        /*Buradan Devam*/
+        @media (max-width: 768px) {
+            .box{
+                width: 50%;
+            }
+        }
+        
+        @media (max-width:500px) {
+            .box{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus excepturi impedit quasi incidunt eligendi
+        nemo!</p>
+    <div class="container">
+        <div class="box">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, veritatis?</p>
+        </div>
+        <div class="box">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, veritatis?</p>
+        </div>
+        <div class="box">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, veritatis?</p>
+        </div>
+        <div class="box">
+            <h1>Article 1</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, veritatis?</p>
+        </div>
+    </div>
+</body>
+
+</html>
