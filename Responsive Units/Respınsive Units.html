@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive-Css Units</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 20px;
+        }
+        .div1{
+            font-size: 1.5em; /*Em kullanırsak parent'in font size'ına göre orantılıyor*/
+        }
+        .div1 p{
+            font-size: 1.5rem; /*Rem kullanırsak html elementimizin font size'ına göre orantılıyor*/
+        }
+        .div1 h5{
+            font-size: 50%; /* % kullanırsak parent'in font size'ına göre %olarak orantılıyor*/
+        }
+        .div-vw-vh{
+            width: 40vw; /* Bu şekilde div'imizin genişlikte boyutu sürekli tarayıcıda gördüğümüz alanın %40'ı kadar olacaktır*/
+            height: 10vh; /* Bu şekilde div'imizin uzunlukta boyutu sürekli tarayıcıda gördüğümüz alanın %10'u kadar olacaktır*/
+            background: #a7a7a7;
+            margin-bottom: 10px;
+        }
+        .background{
+            background: url("image/pexels-céline-7325997.jpg") center center no-repeat;
+            background-size: cover;
+            height: 100vh; /*Background resmimiz Viewport alanının %100 ünü kapsayacak*/
+            display: flex;
+            flex-direction: column; /*Contentlerimiz alt alta sıralanacak*/
+            color: #fff;
+            align-items: center; /*Contentlerimiz flexbox içerisinde ortada görünecek*/
+            padding: 10rem; /*Html font size'ının 10 katı kadar padding vermiş olduk*/
+        }
+        .background h1{
+            margin-bottom: 1rem;
+            font-size: 3rem;
+        }
+        .background p{
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+        @media (max-width:500px) { /*Media query'si ile sayfamız 500px'e düştüğünde oluşacak aksiyonları verdik*/
+            .background h1{
+                margin-bottom: 0.5rem;
+                font-size: 2rem;
+            }
+            .background p{
+                font-size: 1rem;
+                display: none; /*Bu sayede sayfa boyutumuz 500px altına düştüğünde p etiketimiz görünmeyecek*/
+            }
+        }
+    </style>
+</head>
+<!--Responsive Units
+em,rem,vw,vh,%-->
+<body>
+    <div class="div1">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure, molestias.</p>
+        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, tempora!</h5>
+    </div>
+    <div class="div-vw-vh"></div>
+    <div class="background">
+        <h1>Welcome To The Site</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ex.</p>
+    </div>
+</body>
+</html>
